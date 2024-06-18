@@ -1,0 +1,11 @@
+streamlit
+PyPDF2
+selenium
+chromedriver-autoinstaller
+langchain-core
+langchain_openai
+requests
+beautifulsoup4
+python-dotenv
+langchain
+openai
