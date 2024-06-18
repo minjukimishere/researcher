@@ -4,6 +4,7 @@ selenium
 chromedriver-autoinstaller
 langchain-core
 langchain_openai
+langchain_community
 requests
 beautifulsoup4
 python-dotenv
