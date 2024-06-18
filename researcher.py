@@ -24,7 +24,7 @@ llm = OpenAI(api_key=openai_api_key)
 
 # 프롬프트 템플릿 설정
 prompt = ChatPromptTemplate.from_messages([
-    ("system", "You are an AI Intern. Make a daily report."),
+    ("system", "You are conducting research to write a paper. Please write a research report."),
     ("user", "{input}")
 ])
 
@@ -51,8 +51,8 @@ def translate_summary(summary):
     translated_summary = llm_chain.run(input=input_text)
     return translated_summary
 
-st.header("논문 자동 다운로드", divider='orange')
-st.markdown("논문을 검색하고 PDF를 자동으로 다운로드합니다.")
+st.subheader("노세老世 | 자료조사", divider='orange')
+st.markdown("해외 논문 사이트에서 논문을 검색하고 논문 다운로드 링크와 요약의 번역본을 제공합니다.")
 st.markdown(" ")
 
 # 검색어 입력
@@ -68,10 +68,11 @@ if st.button("검색 및 다운로드"):
             
             if papers_list:
                 for paper in papers_list:
+                    st.markdown("---")
                     st.markdown(f"### {paper['title']}")
                     st.markdown(f"[PDF 링크]({paper['link']})")
                     translated_summary = translate_summary(paper['summary'])
-                    st.markdown(f"{translated_summary}")
+                    st.markdown(f"서두: {translated_summary}")
             else:
                 st.error("논문을 찾을 수 없습니다. 다른 검색어를 시도해 보세요.")
 else:
