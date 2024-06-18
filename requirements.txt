@@ -1,7 +1,5 @@
 streamlit
 PyPDF2
-selenium
-chromedriver-autoinstaller
 langchain-core
 langchain_openai
 langchain_community
